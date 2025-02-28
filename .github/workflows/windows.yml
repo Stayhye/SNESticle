@@ -1,12 +1,10 @@
-name: windowsci
-
-on: [push]
-
+name: Picodrive CI
+on: [push, pull_request]
 jobs:
 
-  build:
-   runs-on: ubuntu-latest
-    container: ps2dev/ps2dev:latest
+  build-ps2:
+    runs-on: ubuntu-latest
+    container: ps2dev/ps2dev
     steps:
     - uses: actions/checkout@v4       
     - name: Install dependencies
